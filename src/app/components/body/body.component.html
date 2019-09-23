@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col">
+    <h1>
+      <h1>*ngIf</h1>
+    </h1>
+    <hr>
+
+    <!--
+(click)="mostrar = !mostrar" // funcion que cambiara cada vez el valor de la variable
+-->
+    <button class="btn btn-outline-primary btn-primary btn-block" (click)="mostrar = !mostrar">
+      Mostrar/Ocultar
+    </button>
+    <br>
+    <!--
+    mostrar  // variable desde el body.component
+    -->
+    <div *ngIf="mostrar" class="card text-white bg-primary mb-3" style="width: 100%">
+      <div class="card-body">
+        <h5 class="card-title">Autor: {{frase.autor}}</h5>
+        <p class="card-text">{{frase.mensaje}}</p>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="col">
+    <h1>*ngFor</h1>
+    <hr>
+    <!--
+    *ngFor="let personaje of personajes"
+    recorremos el array personajes, y accedemos a cada item como personaje
+
+    let i = index  // capturamos en i el indece
+    -->
+    <ul class="list-group" *ngFor="let personaje of personajes; let i = index">
+      <li class="list-group-item">{{i + 1}} - {{personaje}}</li>
+    </ul>
+  </div>
+  <hr>
+</div>
